@@ -10,16 +10,26 @@ import UIKit
 import Foundation
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
     
     // init calc object
     var calc = Calculator()
     
     var history = History()
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let data = history.history
+        
+        let HistoryVC = segue.destination as! HistoryViewController
+        
+        HistoryVC.data = data
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
     
     // determine which func in Calculator object to call
     func determineOp(_ op:String, _ num:String, _ source:String){
@@ -124,7 +134,6 @@ class ViewController: UIViewController {
             dispayLabel.text = calc.getResult()
             
             // clear last Op to handle multiple equal press
-//            print(calc.getResult(), calc.lastOp)
             // set done = true
             calc.done = true
         }
@@ -137,7 +146,6 @@ class ViewController: UIViewController {
         let currentOp = sender.currentTitle!
         if calc.OpExpression == "" {
             // regular case
-            //        print(calc.lastOp)
             if calc.lastOp == "" && Double(dispayLabel.text!) != nil && currentOp != "FACT" && currentOp != "CT"{
                 // store first number
                 if (currentOp == "AVG"){
@@ -154,7 +162,6 @@ class ViewController: UIViewController {
             }
             calc.lastOp = currentOp
             //        dispayLabel.text = calc.getResult()
-            //        print(calc.getResult(), calc.lastOp)
         } else {
             // RPN case
             if dispayLabel.text! != "" {
@@ -170,19 +177,20 @@ class ViewController: UIViewController {
     
     func reversePolishNotation(_ op: String) {
         let nums = calc.OpExpression.split(separator: " ")
-        print(nums)
         if nums.count > 0 && Double(nums[0]) != nil {
             if (op != "CT"){
+                calc.fullExpressionHistory += "\(nums[0]) "
                 calc.add(String(nums[0]), true)
-
             } else {
-                 determineOp(op, String(nums[0]), "op")
+                determineOp(op, String(nums[0]), "op")
+                
             }
             for i in 1..<nums.count {
                 if Double(nums[i]) != nil {
                     determineOp(op, String(nums[i]), "op")
                 }
             }
+            history.add(calc.getfullExpression())
         }
         
     }
