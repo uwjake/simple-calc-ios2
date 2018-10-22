@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleCalc_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65v-ZZ-IuV">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gS0-Wt-ORy">
                                         <rect key="frame" x="71" y="20" width="312" height="34"/>
@@ -39,8 +39,8 @@
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-4z-mzf">
                                         <rect key="frame" x="0.0" y="164" width="414" height="98"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-Lp-VM4">
-                                                <rect key="frame" x="0.0" y="-8" width="112" height="122"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-Lp-VM4">
+                                                <rect key="frame" x="10" y="-8" width="91" height="122"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -49,8 +49,8 @@
                                                     <action selector="btnClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D9f-gr-R4Z"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-ge-gIR">
-                                                <rect key="frame" x="120" y="-8" width="88" height="122"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-ge-gIR">
+                                                <rect key="frame" x="111" y="-12" width="91" height="122"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -59,18 +59,8 @@
                                                     <action selector="btnClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JlS-F4-r45"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liE-od-KGe">
-                                                <rect key="frame" x="207.66666666666663" y="-9" width="99" height="123"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <state key="normal" title="RPN"/>
-                                                <connections>
-                                                    <action selector="btnSpacePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPq-Qa-0dJ"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGV-yY-2Ci">
-                                                <rect key="frame" x="306.66666666666669" y="-9" width="99.333333333333314" height="122"/>
+                                                <rect key="frame" x="313" y="-9" width="91" height="122"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -79,23 +69,30 @@
                                                     <action selector="btnOpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajG-LQ-Qx5"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liE-od-KGe">
+                                                <rect key="frame" x="212" y="-9" width="91" height="123"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <state key="normal" title="RPN"/>
+                                                <connections>
+                                                    <action selector="btnSpacePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPq-Qa-0dJ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="YGV-yY-2Ci" firstAttribute="width" secondItem="v9X-Lp-VM4" secondAttribute="width" id="2OJ-Xd-wOS"/>
-                                            <constraint firstAttribute="trailing" secondItem="YGV-yY-2Ci" secondAttribute="trailing" constant="8" id="HMc-DV-Yoo"/>
-                                            <constraint firstItem="YGV-yY-2Ci" firstAttribute="leading" secondItem="liE-od-KGe" secondAttribute="trailing" id="Hjt-eZ-69t"/>
-                                            <constraint firstItem="v9X-Lp-VM4" firstAttribute="leading" secondItem="EOu-4z-mzf" secondAttribute="leadingMargin" id="JsW-AQ-wwt"/>
-                                            <constraint firstItem="yWH-ge-gIR" firstAttribute="leading" secondItem="v9X-Lp-VM4" secondAttribute="trailing" constant="8" id="Qsq-cZ-Qh3"/>
-                                            <constraint firstItem="liE-od-KGe" firstAttribute="leading" secondItem="yWH-ge-gIR" secondAttribute="trailing" id="RJs-JJ-9YX"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="v9X-Lp-VM4" secondAttribute="bottom" constant="1" id="RVG-2c-mvP"/>
-                                            <constraint firstItem="liE-od-KGe" firstAttribute="height" secondItem="v9X-Lp-VM4" secondAttribute="height" id="Ua1-hH-j2G"/>
-                                            <constraint firstItem="yWH-ge-gIR" firstAttribute="leading" secondItem="v9X-Lp-VM4" secondAttribute="trailing" constant="1" id="gBN-hr-DBM"/>
-                                            <constraint firstItem="yWH-ge-gIR" firstAttribute="width" secondItem="v9X-Lp-VM4" secondAttribute="width" id="iF1-5Z-pGw"/>
-                                            <constraint firstItem="YGV-yY-2Ci" firstAttribute="height" secondItem="v9X-Lp-VM4" secondAttribute="height" id="n8K-S0-4hY"/>
-                                            <constraint firstItem="liE-od-KGe" firstAttribute="width" secondItem="v9X-Lp-VM4" secondAttribute="width" id="ou4-He-CD6"/>
-                                            <constraint firstItem="yWH-ge-gIR" firstAttribute="height" secondItem="v9X-Lp-VM4" secondAttribute="height" id="qWQ-Fu-QdB"/>
-                                            <constraint firstItem="v9X-Lp-VM4" firstAttribute="top" secondItem="EOu-4z-mzf" secondAttribute="topMargin" constant="1" id="tkr-ji-xJB"/>
+                                            <constraint firstItem="YGV-yY-2Ci" firstAttribute="height" secondItem="v9X-Lp-VM4" secondAttribute="height" id="3xa-xs-csE"/>
+                                            <constraint firstItem="liE-od-KGe" firstAttribute="leading" secondItem="yWH-ge-gIR" secondAttribute="trailing" constant="10" id="KRz-is-1Qt"/>
+                                            <constraint firstItem="YGV-yY-2Ci" firstAttribute="width" secondItem="v9X-Lp-VM4" secondAttribute="width" id="OnC-SO-Bwl"/>
+                                            <constraint firstItem="liE-od-KGe" firstAttribute="height" secondItem="v9X-Lp-VM4" secondAttribute="height" id="c0E-jX-HUr"/>
+                                            <constraint firstItem="yWH-ge-gIR" firstAttribute="leading" secondItem="v9X-Lp-VM4" secondAttribute="trailing" constant="10" id="fBg-zU-PYh"/>
+                                            <constraint firstAttribute="trailing" secondItem="YGV-yY-2Ci" secondAttribute="trailing" constant="10" id="gOg-XG-bCu"/>
+                                            <constraint firstItem="v9X-Lp-VM4" firstAttribute="leading" secondItem="EOu-4z-mzf" secondAttribute="leading" constant="10" id="i8I-VN-3Ty"/>
+                                            <constraint firstItem="yWH-ge-gIR" firstAttribute="width" secondItem="v9X-Lp-VM4" secondAttribute="width" id="j93-sj-SNT"/>
+                                            <constraint firstItem="yWH-ge-gIR" firstAttribute="height" secondItem="v9X-Lp-VM4" secondAttribute="height" id="jFw-5m-p0T"/>
+                                            <constraint firstItem="liE-od-KGe" firstAttribute="width" secondItem="v9X-Lp-VM4" secondAttribute="width" id="jMY-c3-a65"/>
+                                            <constraint firstItem="YGV-yY-2Ci" firstAttribute="leading" secondItem="liE-od-KGe" secondAttribute="trailing" constant="10" id="zdc-kF-rKf"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYO-dZ-cSu">
@@ -379,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343.47826086956525" y="-53.804347826086961"/>
+            <point key="canvasLocation" x="343.16546762589928" y="-53.956834532374103"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="xrz-YN-UwQ">
@@ -390,11 +387,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Y5u-UR-bSg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gHZ-8F-g4V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ok-CO-kgX">
-                                <rect key="frame" x="20" y="20" width="374" height="34"/>
+                                <rect key="frame" x="20" y="44" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="&lt; Back"/>
                                 <connections>
@@ -402,7 +399,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OME-IH-3bE">
-                                <rect key="frame" x="20" y="62" width="374" height="654"/>
+                                <rect key="frame" x="20" y="86" width="374" height="756"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="qXT-FD-5c4" id="GAa-OC-RHj"/>
