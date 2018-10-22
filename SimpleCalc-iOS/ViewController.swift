@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     // init calc object
     var calc = Calculator()
     
+    var history = History()
+    
     // determine which func in Calculator object to call
     func determineOp(_ op:String, _ num:String, _ source:String){
         if Double(num) != nil {
@@ -126,6 +128,8 @@ class ViewController: UIViewController {
             // set done = true
             calc.done = true
         }
+        history.add(calc.getfullExpression())
+        print(history.history)
         
     }
     
@@ -136,7 +140,11 @@ class ViewController: UIViewController {
             //        print(calc.lastOp)
             if calc.lastOp == "" && Double(dispayLabel.text!) != nil && currentOp != "FACT" && currentOp != "CT"{
                 // store first number
+                if (currentOp == "AVG"){
+                    calc.fullExpressionHistory += "\(dispayLabel.text!) "
+                }
                 calc.add(dispayLabel.text!, true)
+                
             } else {
                 determineOp(currentOp, dispayLabel.text!, "op")
             }
@@ -188,20 +196,24 @@ class Calculator {
     var done = false
     var OpExpression = ""
     var sum = 0.0
+    var fullExpressionHistory = ""
     
-    func add(_ num: String, _ avg: Bool = false){
+    func add(_ num: String, _ storeFirst: Bool = false){
         self.currentResult = self.currentResult + Double(num)!
-        if (avg){
+        if (storeFirst){
             self.sum += Double(num)!
         }
+        self.addToExpression("+", num)
     }
     
     func sub(_ num: String){
         self.currentResult = self.currentResult - Double(num)!
+        self.addToExpression("-", num)
     }
     
     func mul(_ num: String){
         self.currentResult = self.currentResult * Double(num)!
+        self.addToExpression("×", num)
     }
     
     func div(_ num: String){
@@ -209,14 +221,17 @@ class Calculator {
         if self.currentResult.exponent >= 0 || abs(self.currentResult) < 1 {
             self.isDecimal = true
         }
+        self.addToExpression("÷", num)
     }
     
     func mod(_ num: String){
         self.currentResult = Double( Int(self.currentResult) % Int(num)!)
+        self.addToExpression("%", num)
     }
     
     func count(_ num: String){
         self.currentResult += 1
+        self.addToExpression("CT", num)
     }
     
     func avg(_ num: String){
@@ -226,10 +241,13 @@ class Calculator {
         if self.currentResult.exponent >= 0 || abs(self.currentResult) < 1 {
             self.isDecimal = true
         }
+        self.addToExpression("AVG", num)
     }
     
     func fact(){
+        let num = String(Int(self.currentResult))
         self.currentResult = Double(calcFact(factor: Int(self.currentResult)))
+        self.addToExpression("!", num)
     }
     
     func calcFact(factor: Int)->Int{
@@ -246,9 +264,41 @@ class Calculator {
         } else {
             return String(Int(self.currentResult))
         }
-        
     }
     
+    func addToExpression(_ op: String, _ num: String) {
+        switch op {
+        case "!":
+            self.fullExpressionHistory += "\(num) \(op) "
+        default:
+            self.fullExpressionHistory += "\(op) \(num) "
+        }
+    }
+    
+    func getfullExpression()->String {
+        var result = ""
+        switch self.lastOp {
+        case "+", "-", "×", "÷", "%", "!":
+            result = String("\(self.fullExpressionHistory)= \(self.getResult())".dropFirst(2))
+        case "CT":
+            result = String("\(self.fullExpressionHistory)= \(self.getResult())".dropFirst(3))
+        // AVG
+        default:
+            result = String("\(self.fullExpressionHistory)= \(self.getResult())".dropFirst(4))
+        }
+        return result
+    }
     
 }
+
+class History {
+    var history: Array<String> = []
+    
+    
+    func add(_ expression: String){
+        self.history.insert(expression, at:0)
+    }
+    
+}
+
 
