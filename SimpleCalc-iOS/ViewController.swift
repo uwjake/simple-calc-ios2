@@ -10,11 +10,15 @@ import UIKit
 import Foundation
 
 class ViewController: UIViewController {
-    
+
     // init calc object
     var calc = Calculator()
     
+    var historyFromHistory:[String] = []
+    
     var history = History()
+
+   
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,7 +29,9 @@ class ViewController: UIViewController {
         HistoryVC.data = data
     }
     override func viewDidLoad() {
+        history.history = historyFromHistory
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -10,17 +10,14 @@ import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDataSource {
 
-    public var data:Array<String> = []
+    public var data:[String] = []
 
     
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
+        super.viewDidLoad()
         print (data)
-//        let myData = Data(data)
-//        tableview.dataSource = myData
-//        print(myData.data)
         // Do any additional setup after loading the view.
     }
     
@@ -39,8 +36,14 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "HISTORY"
+        return "History"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ViewController : ViewController = segue.destination as! ViewController
+        ViewController.historyFromHistory = data
+    }
+    
 
 
     /*
@@ -54,25 +57,4 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
     */
 
 }
-
-//class Data: NSObject, UITableViewDataSource {
-//    var data:[String]
-//    init(_ data: [String]){
-//        self.data = data
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return data.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell()
-//        cell.textLabel?.text = data[indexPath.row]
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "HISTORY"
-//    }
-//}
 
